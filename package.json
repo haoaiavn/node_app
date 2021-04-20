@@ -2,9 +2,9 @@
   "name": "node_app",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "nodemon --inspect app.js",
+    "start": "nodemon --inspect src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/haoaiavn/node_app#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
