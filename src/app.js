@@ -2,11 +2,15 @@ const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const morgan = require('morgan');
+const sass = require('node-sass');
 const app = express();
 const port = 3000;
 
+// static file
+app.use(express.static(path.join(__dirname, 'public')))
+// show log res, req when F5
 app.use(morgan("combined"));
-
+// change .extname
 app.engine('hbs', exphbs({
     extname: ".hbs"
 }));
