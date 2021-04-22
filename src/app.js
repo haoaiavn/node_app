@@ -20,9 +20,6 @@ app.set('views', path.join(__dirname, 'resources/views'));
 app.get('/', (req, res)=> res.render('home'));
 app.get('/about', (req, res)=> res.render('about'));
 app.get('/news', (req, res)=> res.render('news'));
-app.get('/search', (req, res)=> {
-    console.log(req.query);
-    res.render('search');
-});
+app.get('/search', (req, res)=> res.render('search'));
 
 app.listen(port, ()=> console.log(`Listenning at localhost:${port}`));
