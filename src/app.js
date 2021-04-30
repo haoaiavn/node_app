@@ -4,10 +4,14 @@ const exphbs = require('express-handlebars');
 const morgan = require('morgan');
 const sass = require('node-sass');
 const route = require('./routes/');
+
+const db = require('./app/config/db');
 const app = express();
 const port = 3000;
 
-// static file
+
+//connect db
+db.connect();// static file
 app.use(express.static(path.join(__dirname, 'public')));
 // show log res, req when F5
 //app.use(morgan("combined"));
