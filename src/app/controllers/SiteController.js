@@ -1,15 +1,14 @@
+const { render } = require('node-sass');
+const { mongoosesToObject} = require('../../utils/mongoose');
 const Course = require('../models/Course');
 
 class SiteController {
-    index(req, res) {
-        Course.find({}, function(err, courses) {
-            if(!err){
-                res.json(courses);
-                console.log(courses.length);
-            } else {
-                res.status(400).json({error: 'Error!!!'});
-            }
-        });
+    index(req, res, next) {
+        Course.find({})
+        .then(courses => res.render('home', {
+            courses: mongoosesToObject(courses)
+        }))
+        .catch(next);
     }
     search(req, res) {  
         res.render('search');
