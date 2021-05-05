@@ -9,6 +9,16 @@ class CourseController {
         }))
         .catch(next);
     }
+    create(req, res, next) {
+        res.render('courses/create');
+    }
+
+    post(req, res, next) {
+        var course = new Course(req.body);
+        course.save()
+            .then(() => res.redirect('/'))
+            .catch(error => {})
+    }
 
 }
 

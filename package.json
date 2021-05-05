@@ -33,6 +33,7 @@
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
     "mongoose": "^5.12.6",
+    "mongoose-slug-generator": "^1.0.4",
     "prettier": "^2.2.1"
   },
   "devDependencies": {
